@@ -8,7 +8,7 @@ on:
       - main
     # Only run this workflow when a push is made to container/
     paths:
-      - 'packges/container/**'
+      - 'packages/container/**'
 
 # Sets our execution environment to inside our container directory
 defaults:
