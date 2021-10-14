@@ -19,7 +19,10 @@ const prodConfig = {
             },
             shared: packageJson.dependencies
         })
-    ]
+    ],
+    stats: {
+        children: true
+    }
 };
 
 module.exports = merge(commonConfig, prodConfig);
