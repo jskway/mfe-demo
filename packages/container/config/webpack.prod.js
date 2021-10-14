@@ -9,7 +9,8 @@ const domain = process.env.PRODUCTION_DOMAIN;
 const prodConfig = {
     mode: 'production', // webkpack will make sure our JS files are optimized
     output: {
-        filename: '[name].[contenthash].js' // this ensures whenever we build some files for prod, all the files will use this format as a template for naming
+        filename: '[name].[contenthash].js', // this ensures whenever we build some files for prod, all the files will use this format as a template for naming
+        publicPath: '/container/latest/' // used any time you have some part of webpack that tries to refer to a file that has been built by webpack.  Eg. HtmlPlugin trying to access some JS file that's been created
     },
     plugins: [
         new ModuleFederationPlugin({
