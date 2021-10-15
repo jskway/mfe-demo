@@ -8,10 +8,10 @@ const packageJson = require('../package.json');
 const devConfig = {
     mode: 'development',
     output: {
-        publicPath: 'http://localhost:8081/'
+        publicPath: 'http://localhost:8082/'
     },
     devServer: {
-        port: 8081,
+        port: 8082,
         historyApiFallback: true
     },
     plugins: [
@@ -19,10 +19,10 @@ const devConfig = {
             template: './public/index.html'
         }),
         new ModuleFederationPlugin({
-            name: 'marketing', // this will be used to declare a global var when the script loads up inside the container
+            name: 'auth', // this will be used to declare a global var when the script loads up inside the container
             filename: 'remoteEntry.js',
             exposes: {
-                './MarketingApp': './src/bootstrap' // whenever someone asks for './Marketing', give them the bootstrap.js file
+                './AuthApp': './src/bootstrap' // whenever someone asks for './AuthApp', give them the bootstrap.js file
             },
             shared: packageJson.dependencies,
         })
