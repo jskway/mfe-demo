@@ -19,7 +19,8 @@ const devConfig = {
             remotes: {
                 marketing: 'marketing@http://localhost:8081/remoteEntry.js', // keys are the different names of the modules we're going to import into our container
                                                                             // values are where the remoteEntry file is for that module
-                auth: 'auth@http://localhost:8082/remoteEntry.js'
+                auth: 'auth@http://localhost:8082/remoteEntry.js',
+                dashboard: 'dashboard@http://localhost:8083/remoteEntry.js',
             },
             shared: packageJson.dependencies 
         }),
